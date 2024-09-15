@@ -1,5 +1,6 @@
 create_clock -period 20.000ns [get_ports clkin]
-create_clock -period 100.000ns sdram:sdram0|cpuclk
+create_clock -period 100.000ns cpuclk
+create_clock -period 100.000ns [get_ports dram_clk]
 derive_pll_clocks -use_net_name
 derive_clock_uncertainty
 

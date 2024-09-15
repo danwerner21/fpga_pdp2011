@@ -1,5 +1,7 @@
 #!/bin/bash
 
+QPATH=/opt/intelFPGA_lite/20.1/quartus/bin/
+export QPATH
 WDIR=`pwd`
 export WDIR
 
@@ -22,7 +24,6 @@ cp $SRCDIR/top.cof .
 sed -E -i 's/r._sdcard_(.*) => /rl_sdcard_\1 => /' top.vhd
 sed -i 's/have_r. => 1/have_rl => 1/' top.vhd
 sed -i 's/have_xu => ./have_xu => 0/' top.vhd
-sed -i 's/cons-c1k-basic/cons-c1k-rl/' top.cof
 
 cd $WDIR
 mkdir $WDIR/cons-c1k-rk
@@ -36,7 +37,6 @@ cp $SRCDIR/top.cof .
 sed -E -i 's/r._sdcard_(.*) => /rk_sdcard_\1 => /' top.vhd
 sed -i 's/have_r. => 1/have_rk => 1/' top.vhd
 sed -i 's/have_xu => ./have_xu => 0/' top.vhd
-sed -i 's/cons-c1k-basic/cons-c1k-rk/' top.cof
 
 cd $WDIR
 mkdir $WDIR/cons-c1k-rh
@@ -50,7 +50,6 @@ cp $SRCDIR/top.cof .
 sed -E -i 's/r._sdcard_(.*) => /rh_sdcard_\1 => /' top.vhd
 sed -i 's/have_r. => 1/have_rh => 1/' top.vhd
 sed -i 's/have_xu => ./have_xu => 0/' top.vhd
-sed -i 's/cons-c1k-basic/cons-c1k-rh/' top.cof
 
 cd $WDIR
 mkdir $WDIR/cons-c1k-rhxu

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-QPATH=/opt/intelFPGA_lite/22.1std/quartus/bin/
+QPATH=/opt/intelFPGA_lite/20.1/quartus/bin/
 export QPATH
 WDIR=`pwd`
 export WDIR
@@ -31,3 +31,4 @@ $QPATH/quartus_cpf --convert top.cof
 
 cd $WDIR/minc-de10l
 $QPATH/quartus_sh --flow compile top
+
